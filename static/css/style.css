@@ -1,0 +1,45 @@
+
+/* Variables */
+:root{
+  --primary:#ff4655;
+  --bg:#0d1117;
+  --muted:#bfc5c9;
+  --neon:#6cffea; /* add */
+}
+
+/* Base */
+body{body{ margin:0; font-family:Arial, sans-serif; background:var(--bg); color:#fff }
+.container{ max-width:1200px; margin:0 auto; padding:0 16px }
+
+/* Navbar / Footer */
+.navbar{ background:linear-gradient(90deg,#0b0d10,#111219) }
+.footer{ padding:30px 0; background:#051018; color:#9aa6b2 }
+.footer a{ color:#cfe7ff; text-decoration:underline }
+.footer a:hover{ color:#fff }
+
+/* Hero */
+.hero{
+  height:100vh;
+  background:url('../img/hero_v2.jpeg') center/cover no-repeat fixed; /* path fixed */
+  display:flex; align-items:center; justify-content:center; position:relative;
+}
+.hero::before{ content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg,rgba(13,17,23,.6),rgba(13,17,23,.6));
+}
+.hero-inner{ position:relative; z-index:2; max-width:900px; padding:30px }
+.hero .display-4{ color:#fff; text-shadow:0 6px 30px rgba(0,0,0,.6) }
+
+/* Buttons & cards */
+.btn-primary{
+  background:linear-gradient(90deg,var(--primary),#ff7a6a);
+  border:none; color:#fff; cursor:pointer;
+  padding:10px 16px; border-radius:6px;
+}
+.card{ background:#0f1520; padding:12px; border-radius:8px }
+.meals-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px }
+
+/* Optional helpers for training splits */
+.split-layout{ display:flex; gap:12px }
+.split-body{ flex:1 }
+.split-title{ color:var(--neon) }
+}
