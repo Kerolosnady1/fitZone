@@ -20,7 +20,7 @@ body{body{ margin:0; font-family:Arial, sans-serif; background:var(--bg); color:
 /* Hero */
 .hero{
   height:100vh;
-  background:url('../img/hero_v2.jpeg') center/cover no-repeat fixed; /* path fixed */
+  background:url('../img/hero-bg.jpeg') center/cover no-repeat fixed; /* path fixed */
   display:flex; align-items:center; justify-content:center; position:relative;
 }
 .hero::before{ content:''; position:absolute; inset:0;
