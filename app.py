@@ -28,6 +28,7 @@ ALLOWED = {"png", "jpg", "jpeg", "gif"}
 
 app.config["UPLOAD_FOLDER"] = str(UPLOADS)
 
+
 def allowed_ext(filename: str) -> bool:
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED
 
@@ -42,6 +43,19 @@ def get_db() -> sqlite3.Connection:
         conn.row_factory = sqlite3.Row
         g.db = conn
     return g.db
+
+def init_db():
+    import sqlite3
+    conn = sqlite3.connect(DB_PATH)
+    with open(BASE_DIR / "schema.sql", "r", encoding="utf-8") as f:
+        conn.executescript(f.read())
+    conn.close()
+
+
+@app.route("/healthz")
+def healthz():
+    return "ok", 200
+
 
 @app.teardown_appcontext
 def close_db(exception):
