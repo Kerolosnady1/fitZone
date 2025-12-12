@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+  <h2>My Profile</h2>
+  {% if g.user %}
+    <p><strong>Email:</strong> <span id="userEmail">{{ g.user.email }}</span></p>
+  {% else %}
+    <p>You’re not logged in. {{ url_for(Login</a></p>
+   {% endif %}
+
+  <h3>Workout Streak</h3>
+  <p>Days in a row: <strong id="streakCount">0</strong></p>
+  <button class="btn-primary" onclick="App.markWorkoutDone()">Mark Workout Done</button>

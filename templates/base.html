@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FitZone — {% block title %}{% endblock %}</title>
+
+  <!-- Global stylesheet (adjust path if your file is named differently) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  {% block head_styles %}{% endblock %}
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <!-- Brand/logo -->
+      <a href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="FitZone" />
+      </a>
+      <ul class="nav">
+        <li><a href="{{ url_for('training') }}">Training</a></li>
+        <li><a href="{{ url_for('workouts') }}">Workouts</a></li>
+        <li><a href="{{ url_for('nutrition') }}">Nutrition</a></li>
+        <li><a href="{{ url_for('calculators') }}">Calculators</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+
+        {% if g.user %}
+          <li><a href="{{ url_for('account') }}">My Account</a></li>
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          <li><a href="{{ url_for('register') }}">Register</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  </nav>
+  {% endblock %}
+
+  <!-- Flash messages -->
+  <div class="container" id="flash-area">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for cat, msg in messages %}
+          <div class="flash flash-{{ cat }}">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+
+  <!-- Page content -->
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+      <small>
+        © 2025 FitZone —
+        Contact:
+        <a href="mailto:1ra3d1ra3d1@gmail.com">1ra3d1ra3d1@gmail.com</a>
+      </small>
+        mailto:1ra3d1ra3d1@gmail.com</a>
+      </small>
+    </div>
+  <!-- Global scripts -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  {% block scripts %}{% endblock %}
+
+  <!-- Optional dialog/modal placeholder -->
+  <dialog id="videoModal"></dialog>
+</body>

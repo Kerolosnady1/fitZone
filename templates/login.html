@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+  <h2>Login</h2>
+  <form id="loginForm" style="max-width:360px">
+    <div style="margin-bottom:10px">
+      <label for="email">Email</label>
+      <input id="email" type="email" required style="width:100%">
+    </div>
+    <div style="margin-bottom:10px">
+      <label for="password">Password</label>
+      <input id="password" type="password" required style="width:100%">
+    </div>
+    <button class="btn-primary" type="submit">Log in</button>
+  </form>
