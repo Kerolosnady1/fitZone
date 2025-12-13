@@ -1,18 +1,1 @@
-
-{% extends 'base.html' %}{%
-{% block title %}Nutrition{% endblock %}
-{% block content %}
-  <h2>Nutrition</h2>
-  {% if recipes and recipes|length > 0 %}
-    <div class="meals-grid">
-      {% for r in recipes %}
-        <article class="card">
-          <h3>{{ r.name }}</h3>
-          <p>{{ r.kcal }} kcal</p>
-          <small>P: {{ r.protein }}g · C: {{ r.carbs }}g · F: {{ r.fat }}g</small>
-        </article>
-      {% endfor %}
-    </div>
-  {% else %}
-    <div class="card"><p>No recipes yet. Seed the DB or add a form.</p></div>
-  {% endif %}
+{% extends 'base.html' %}{% block title %}Nutrition{% endblock %}{% block content %}<div class='container py-4'><h2>Nutrition</h2></div>{% endblock %}
