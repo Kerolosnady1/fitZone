@@ -23,7 +23,7 @@ html,body{height:100%;background:var(--bg);background-image: url('../img/hero_v2
 .brand{display:flex;align-items:center;gap:12px}
 .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--neon),#6b00ff);box-shadow:0 0 14px rgba(177,59,255,0.25);display:flex;align-items:center;justify-content:center;font-weight:700}
 .nav{display:flex;gap:18px;align-items:center}
-.nav a{color:var(--text);text-decoration:none;padding:10px 14px;border-radius:8px;transition:all .2s;opacity:0.95}
+.nav a{color: black;text-decoration:none;padding:10px 14px;border-radius:8px;transition:all .2s;opacity:0.95}
 .nav a:hover{box-shadow:0 0 18px var(--neon);transform:translateY(-4px)}
 
 /* hero */
