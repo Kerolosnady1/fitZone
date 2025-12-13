@@ -1,0 +1,266 @@
+!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>من نحن — FitZone</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  :root{
+    --primary-yellow: #E7FF2A;
+    --primary-purple: #8A2BFF;
+    --secondary-pink: #FF3EE5;
+    --main-gradient: linear-gradient(135deg, var(--primary-purple), var(--secondary-pink));
+    --dark-bg: #141414;
+    --glass-bg: rgba(255,255,255,0.06);
+    --card-bg: rgba(255,255,255,0.03);
+    --text-light: #FFFFFF;
+    --text-muted: #CFCFCF;
+    --container-max: 1200px;
+  }
+
+  /* Reset & base */
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:'Cairo',sans-serif;
+    background:var(--dark-bg);
+    color:var(--text-light);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  /* CONTAINER */
+  .wrap{
+    max-width:var(--container-max);
+    margin:0 auto;
+    padding:24px;
+  }
+
+  /* NAV (compact for about page) */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:20px 24px;
+  }
+  .nav .links{display:flex;gap:18px;align-items:center}
+  .nav a{color:var(--text-muted); text-decoration:none; font-weight:500}
+  .nav a:hover{color:var(--primary-yellow)}
+  .logo-icon{
+    width:46px;height:46px;border-radius:10px;background:var(--main-gradient); box-shadow:0 6px 26px rgba(138,43,255,0.18);
+  }
+
+  /* HERO (with bg image area) */
+  .hero{
+    position:relative;
+    margin-top:8px;
+    border-radius:18px;
+    overflow:hidden;
+    display:flex;
+    gap:36px;
+    align-items:center;
+    padding:44px;
+    background:
+      linear-gradient(180deg, rgba(10,10,10,0.55), rgba(10,10,10,0.55)),
+      url('images/hero.jpg') center/cover no-repeat;
+    min-height:50vh;
+  }
+  /* hero overlay glow */
+  .hero::after{
+    content:"";
+    position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(600px 200px at 75% 50%, rgba(139,43,255,0.12), transparent 15%),
+               radial-gradient(600px 200px at 85% 60%, rgba(255,62,229,0.08), transparent 10%);
+    mix-blend-mode:screen;
+  }
+
+  .hero-left{
+    width:48%;
+    position:relative;
+    z-index:1;
+  }
+  .hero-left .photo{
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,0.6);
+    background:#fff;
+  }
+  .hero-left img{display:block;width:100%;height:auto; object-fit:cover;}
+
+  .hero-right{
+    width:52%;
+    position:relative;
+    z-index:2;
+    color:var(--text-light);
+  }
+  .hero-title{
+    font-size:56px;
+    line-height:1;
+    font-weight:900;
+    color:var(--primary-yellow);
+    text-shadow:0 0 18px rgba(231,255,42,0.55);
+    margin:0 0 12px 0;
+  }
+  .hero-sub{
+    color:var(--text-muted);
+    margin:0 0 22px 0;
+    font-size:17px;
+  }
+
+  .btn-ghost{
+    display:inline-block;
+    border-radius:12px;
+    padding:10px 20px;
+    border:2px solid rgba(138,43,255,0.8);
+    background:transparent;
+    color:var(--text-light);
+    cursor:pointer;
+    backdrop-filter:blur(6px);
+    transition:all .25s ease;
+  }
+  .btn-ghost:hover{ background:var(--main-gradient); border-color:transparent; transform:translateY(-4px) }
+
+  /* ABOUT SECTION */
+  .about{
+    margin-top:36px;
+    display:flex;
+    gap:28px;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+
+  .about .content{
+    flex:1 1 520px;
+    min-width:300px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:14px;
+    padding:26px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.6);
+    border:1px solid rgba(255,255,255,0.04);
+  }
+  .about h3{margin-top:0; margin-bottom:8px; font-size:22px; color:var(--primary-yellow)}
+  .about p{color:var(--text-muted); line-height:1.7}
+
+  /* FEATURES column */
+  .features{
+    width:360px; min-width:260px;
+    display:flex; flex-direction:column; gap:18px;
+  }
+  .feat-card{
+    background:var(--card-bg);
+    border-radius:12px;
+    padding:18px;
+    border:1px solid rgba(255,255,255,0.04);
+    box-shadow:0 8px 30px rgba(0,0,0,0.55);
+    display:flex; gap:12px; align-items:center;
+  }
+  .feat-card i{
+    font-size:28px; width:56px; height:56px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center; color:var(--text-light);
+    background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    box-shadow:0 6px 18px rgba(0,0,0,0.5);
+  }
+  .feat-card h4{margin:0; font-size:16px; color:var(--primary-yellow)}
+  .feat-card p{margin:4px 0 0 0; color:var(--text-muted); font-size:14px}
+
+  /* small footer inside about */
+  .about-footer{margin-top:22px; display:flex; gap:12px; align-items:center}
+  .logo-small{width:40px;height:40px;border-radius:8px;background:var(--main-gradient); box-shadow:0 10px 30px rgba(138,43,255,0.12)}
+
+  /* RESPONSIVE */
+  @media (max-width:900px){
+    .hero{flex-direction:column; padding:28px; min-height:60vh}
+    .hero-left, .hero-right{width:100%}
+    .hero-title{font-size:40px}
+    .features{width:100%;}
+    .about{flex-direction:column}
+  }
+  @media (max-width:480px){
+    .hero-title{font-size:30px}
+    .nav{padding:12px}
+    .wrap{padding:12px}
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <!-- NAV -->
+    <header class="nav" aria-label="navbar">
+      <div class="links">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html" aria-current="page">من نحن</a>
+        <a href="services.html">الخدمات</a>
+        <a href="meals.html">Healthy Meals</a>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="btn-ghost" href="login.html">تسجيل دخول</a>
+        <div class="logo-icon" title="FitZone"></div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="hero" role="main" aria-labelledby="hero-title">
+      <div class="hero-left" aria-hidden="true">
+        <!-- ضع هنا صورة المنتج/تجهيزات الجيم -->
+        <!-- اسم الصورة الافتراضي: images/about-photo.jpg -->
+        <div class="photo">
+          <img src="images/about-photo.jpg" alt="معدات الجيم أو تمرين" />
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <h1 id="hero-title" class="hero-title">من نحن — FitZone Gym</h1>
+        <p class="hero-sub">FitZone هو مركز رياضي متكامل يهدف إلى تطوير صحتك البدنية، تحسين لياقتك، وبناء جسم قوي من خلال أحدث الأجهزة وبرامج تدريب متخصصة.</p>
+        <a class="btn-ghost" href="contact.html">احجز الآن</a>
+
+        <!-- glass mini-card (activity) -->
+        <div style="margin-top:24px; max-width:420px;">
+          <div class="feat-card" style="background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));">
+            <i class="fa-solid fa-dumbbell" style="font-size:20px; color:var(--primary-yellow)"></i>
+            <div>
+              <div style="font-weight:700; color:var(--primary-yellow)">• 1 أيام حماس</div>
+              <div style="color:var(--text-muted); font-size:14px; margin-top:6px">سجل تمارينك واحصل على أيام حماس متتالية.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ABOUT DETAILS -->
+    
+<section class="about" aria-label="about content">
+  <div class="content">
+    <h3>About FitZone</h3>
+    <p>المنصة المستقبلية لبناء اللياقة والصحة</p>
+
+    <h3>رؤيتنا</h3>
+    <p>نقدّم لك مساحة ذكية تجمع بين التمرين، التغذية، والتحفيز اليومي. هدفنا إن FitZone يكون شريكك الرئيسي للوصول لأفضل نسخة من جسمك.</p>
+
+    <h3>الهدف بتاعنا</h3>
+    <p>نوفر أدوات تمارين، حاسبات صحية، اطعمه صحيه للحفاظ على لياقه الجسم ، تحديات مستمرة، تساعدك على التقدم خطوة بخطوة بدون تعقيد وبدون ملل.</p>
+
+    <h3>فريق FitZone</h3>
+    <p>تيم كامل من المدربين المتخصصين والمبرمجين المسئولين عن تطوير التجربة لتقديم تجربه أكثر سلاسة.</p>
+
+    <h3>خدمة العملاء</h3>
+    <p>في FitZone سهلنا عليكم التواصل معنا من خلال صفحتنا الرسمية، علشان نكون دايمًا معاكم ونساعدكم في أي وقت.</p>
+
+    <h3>صفحتنا على فيسبوك</h3>
+    <p>يمكنكم التواصل معنا عبر صفحتنا من خلال الرابط التالي: <strong>FitZone | Cairo</strong></p>
+  </div>
+</section>
+
+
+  </div>
+
+</body>
+</html>
