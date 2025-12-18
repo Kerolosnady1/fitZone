@@ -19,26 +19,26 @@
 </header>
 
 <div class="container">
-  <div class="panel"><h2 style="color:var(--neon)">خدماتنا</h2><p>اختر برنامجك التدريبي.</p>
+  <div class="panel"><h2 style="color:var(--neon)">Our Services</h2><p>Choose Your Training Program.</p>
     <div class="grid" id="exerciseList" style="margin-top:12px"></div>
   </div>
 
   <div class="panel" style="margin-top:12px">
-    <h3 style="color:var(--neon)">حاسبة السعرات المتقدمة</h3>
-    <p>تفاصيل وخيارات أكثر تجدها في الصفحة الرئيسية أيضاً.</p>
+    <h3 style="color:var(--neon)">Advanced Calorie Calculator</h3>
+    <p>You’ll also find more details and options on the homepage.</p>
   </div>
 
   <div class="panel" style="margin-top:12px">
     <h2 style="color:var(--neon)">Advanced Calorie & Macro Calculator</h2>
-    <p>اختار هدفك واحسب السعرات والبروتين والكارب والدهون.</p>
+    <p>Choose your goal and calculate calories, protein, carbs, and fats.</p>
     <form id="advCalForm" style="margin-top:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
       <input id="adv_weight" class="input" placeholder="الوزن (kg)">
       <input id="adv_height" class="input" placeholder="الطول (cm)">
       <input id="adv_age" class="input" placeholder="العمر">
-      <select id="adv_gender" class="input"><option value="male">ذكر</option><option value="female">أنثى</option></select>
-      <select id="adv_activity" class="input"><option value="1.2">قليل النشاط</option><option value="1.375">معتدل</option><option value="1.55">نشاط عالي</option></select>
-      <select id="adv_goal" class="input"><option value="maintenance">تثبيت</option><option value="bulking">تضخيم</option><option value="cutting">تنشيف</option></select>
-      <button class="btn" type="button" onclick="App.calcAdvanced()">احسب</button>
+      <select id="adv_gender" class="input"><option value="male">Male</option><option value="female">Female</option></select>
+      <select id="adv_activity" class="input"><option value="1.2">Low Activity</option><option value="1.375">Normal</option><option value="1.55">High Activity</option></select>
+      <select id="adv_goal" class="input"><option value="maintenance">Maintain</option><option value="bulking">Bulking</option><option value="cutting">Cutting</option></select>
+      <button class="btn" type="button" onclick="App.calcAdvanced()">Calculate</button>
     </form>
     <div id="advResults" class="calc-results neon-outline"></div>
   </div>
@@ -46,13 +46,13 @@
 
   <div class="panel" style="margin-top:18px">
     <h2 style="color:var(--neon)">Training Splits</h2>
-    <p>اختار واحدة من جداول التدريب الجاهزة.</p>
+    <p>Choose one of the ready-made training schedules.</p>
     <div class="splits-grid">
-      <div class="split-card"><h3>Bro Split</h3><p>السبت: صدر<br>الأحد: ظهر<br>الإثنين: كتف<br>الثلاثاء: رجل<br>الأربعاء: ذراع<br>الخميس/الجمعة: راحة</p><button class="btn" onclick="App.openSplit('bro')">عرض التفاصيل</button></div>
-      <div class="split-card"><h3>Full Body</h3><p>الجسم كله في نفس اليوم · 3-4 مرات أسبوعيًا</p><button class="btn" onclick="App.openSplit('full')">عرض التفاصيل</button></div>
-      <div class="split-card"><h3>Push / Pull</h3><p>Push: صدر+كتف+تراي · Pull: ظهر+باي</p><button class="btn" onclick="App.openSplit('pushpull')">عرض التفاصيل</button></div>
-      <div class="split-card"><h3>Body Part Split</h3><p>اليوم 1: عضلات كبيرة · اليوم 2: عضلات صغيرة</p><button class="btn" onclick="App.openSplit('bodypart')">عرض التفاصيل</button></div>
-      <div class="split-card"><h3>Powerbuilding</h3><p>قوة + ضخامة · 4-5 أيام في الأسبوع</p><button class="btn" onclick="App.openSplit('power')">عرض التفاصيل</button></div>
+      <div class="split-card"><h3>Bro Split</h3><p>Saturday: Chest<br>Sunday: Back<br>Monday: Shoulders<br>Tuesday: Legs<br>Wednesday: Arms<br>Thursday/Friday: Rest</p><button class="btn" onclick="App.openSplit('bro')">View Details</button></div>
+      <div class="split-card"><h3>Full Body</h3><p>Full body in the same day · 3–4 times per week</p><button class="btn" onclick="App.openSplit('full')">View Details</button></div>
+      <div class="split-card"><h3>Push / Pull</h3><p>Push: Chest + Shoulders + Triceps · Pull: Back + Biceps</p><button class="btn" onclick="App.openSplit('pushpull')">View Details</button></div>
+      <div class="split-card"><h3>Body Part Split</h3><p>Day 1: Major Muscle Groups · Day 2: Minor Muscle Groups</p><button class="btn" onclick="App.openSplit('bodypart')">View Details</button></div>
+      <div class="split-card"><h3>Powerbuilding</h3><p>Strength + Size · 4–5 days per week</p><button class="btn" onclick="App.openSplit('power')">View Details</button></div>
     </div>
   </div>
   <div id="splitModal" class="modal-backdrop"><div class="modal" id="splitContent"></div></div>
