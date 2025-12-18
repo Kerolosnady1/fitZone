@@ -27,12 +27,12 @@ const App = {
   login(){
     const email = document.getElementById('email').value;
     const pass = document.getElementById('password').value;
-    if(!email||!pass){ alert('يرجى إدخال البريد وكلمة المرور'); return; }
+    if(!email||!pass){ alert('Please enter your email and password'); return; }
     // simple demo auth - store in localStorage
     this.user = {email, lastWorkout: localStorage.getItem('lastWorkout')||null, streak: parseInt(localStorage.getItem('streak')||'0')};
-    this.saveUser(); this.updateAuthUI(); alert('تم تسجيل الدخول');
+    this.saveUser(); this.updateAuthUI(); alert('Logged in successfully');
   },
-  logout(){ this.user=null; localStorage.removeItem('fitzone_user'); this.updateAuthUI(); alert('تم تسجيل الخروج'); },
+  logout(){ this.user=null; localStorage.removeItem('fitzone_user'); this.updateAuthUI(); alert('Logged out successfully'); },
   updateAuthUI(){
     if(this.user){
       document.querySelectorAll('.auth-only').forEach(el=>el.style.display='inline-block');
@@ -48,7 +48,7 @@ const App = {
     const height = parseFloat(document.getElementById('height').value);
     const age = parseInt(document.getElementById('age').value);
     const gender = document.getElementById('gender').value;
-    if(!weight||!height||!age){ alert('الرجاء إدخال جميع القيم'); return; }
+    if(!weight||!height||!age){ alert('Please enter all values'); return; }
     // Mifflin-St Jeor Equation
     let bmr = gender==='male' ? 10*weight + 6.25*height - 5*age + 5 : 10*weight + 6.25*height - 5*age -161;
     const activity = document.getElementById('activity').value;
@@ -68,13 +68,13 @@ const App = {
     exercises.forEach(ex=>{
       const div = document.createElement('div');
       div.className='card';
-      div.innerHTML = `<h3>${ex.title}</h3><p>شرح التمرين من مدرب محترف</p><div style="margin-top:8px"><button class="btn" onclick="App.openVideo('${ex.video}')">شاهد الفيديو</button></div>`;
+      div.innerHTML = `<h3>${ex.title}</h3><p>Exercise explained by a professional trainer.</p><div style="margin-top:8px"><button class="btn" onclick="App.openVideo('${ex.video}')">Watch the Video</button></div>`;
       this.exerciseList.appendChild(div);
     });
   },
   openVideo(src){
     const modal = document.getElementById('videoModal'); if(!modal) return;
-    modal.innerHTML = `<div style="position:relative;padding-top:56.25%"><iframe src="${src}" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" allowfullscreen></iframe></div><div style="text-align:right;margin-top:8px"><button class="btn" onclick="App.closeVideo()">إغلاق</button></div>`;
+    modal.innerHTML = `<div style="position:relative;padding-top:56.25%"><iframe src="${src}" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" allowfullscreen></iframe></div><div style="text-align:right;margin-top:8px"><button class="btn" onclick="App.closeVideo()">Close</button></div>`;
     modal.style.display='block';
   },
   closeVideo(){ const modal = document.getElementById('videoModal'); if(modal) modal.style.display='none'; modal.innerHTML=''; },
@@ -94,7 +94,7 @@ const App = {
     localStorage.setItem('lastWorkout', now.toString());
     localStorage.setItem('streak', streak.toString());
     this.updateStreakUI();
-    alert('تم تسجيل التمرين. أيام الحماس: ' + streak);
+    alert('Workout logged. Excitement Days: ' + streak);
   },
   updateStreakUI(){
     const streak = parseInt(localStorage.getItem('streak')||'0');
@@ -111,7 +111,7 @@ App.calcAdvanced = function() {
   const gender = document.getElementById('adv_gender').value;
   const activity = parseFloat(document.getElementById('adv_activity').value);
   const goal = document.getElementById('adv_goal').value;
-  if(!w||!h||!age){ alert('الرجاء إدخال القيم'); return; }
+  if(!w||!h||!age){ alert('Please enter the values'); return; }
   let bmr = gender==='male' ? 10*w + 6.25*h - 5*age + 5 : 10*w + 6.25*h - 5*age -161;
   let maintenance = Math.round(bmr * activity);
   let calories = maintenance;
@@ -139,14 +139,14 @@ App.calcAdvanced = function() {
 App.openSplit = function(key) {
   const content = document.getElementById('splitContent');
   const map = {
-    bro: {title:'Bro Split', body:`<h3>Bro Split</h3><p>السبت: صدر<br>الأحد: ظهر<br>الإثنين: كتف<br>الثلاثاء: رجل<br>الأربعاء: ذراع<br>الخميس/الجمعة: راحة</p><p>تمارين عزل كثيرة · عدد مجموعات كبير · مناسب للتضخيم</p>`},
-    full: {title:'Full Body', body:`<h3>Full Body</h3><p>الجسم كله في نفس اليوم · 3-4 مرات أسبوعيًا</p><p>تمارين مركبة أساسية · التركيز على التكنيك والقوة</p>`},
-    pushpull: {title:'Push / Pull', body:`<h3>Push / Pull</h3><p>Push: صدر+كتف+تراي · Pull: ظهر+باي · 4-5 أيام/أسبوع</p><p>تمارين مركبة بنسبة 70%</p>`},
-    bodypart: {title:'Body Part Split', body:`<h3>Body Part Split</h3><p>اليوم 1: عضلات كبيرة (صدر+ظهر+رجلين)<br>اليوم 2: عضلات صغيرة (كتف+باي+تراي)</p><p>Supersets · Drop sets · مناسب ل3-4 أيام/أسبوع</p>`},
-    power: {title:'Powerbuilding', body:`<h3>Powerbuilding</h3><p>مزيج قوة + ضخامة · 4-5 أيام/أسبوع</p><p>تمارين أساسية ثقيلة + تمارين عزل خفيفة · تكرارات منخفضة في أيام القوة (3–5) وعالية في أيام الضخامة (8–12)</p>`}
+    bro: {title:'Bro Split', body:`<h3>Bro Split</h3><p>Saturday: Chest<br>Sunday: Back<br>Monday: Shoulders<br>Tuesday: Legs<br>Wednesday: Arms<br>Thursday/Friday: Rest</p><p>Multiple isolation exercises · High number of sets · Ideal for bulking</p>`},
+    full: {title:'Full Body', body:`<h3>Full Body</h3><p>Full body in the same day · 3–4 times per week</p><p>Basic compound exercises · Focus on technique and strength</p>`},
+    pushpull: {title:'Push / Pull', body:`<h3>Push / Pull</h3><p>Push: Chest + Shoulders + Triceps · Pull: Back + Biceps</p><p>Compound exercises: 70%</p>`},
+    bodypart: {title:'Body Part Split', body:`<h3>Body Part Split</h3><p>Day 1: Major muscle groups (Chest + Back + Legs)<br>Day 2: Minor muscle groups (Shoulders + Biceps + Triceps)</p><p>Supersets · Drop sets · Suitable for 3–4 days per week</p>`},
+    power: {title:'Powerbuilding', body:`<h3>Powerbuilding</h3><p>Combination of Strength + Hypertrophy · 4–5 days per week</p><p>Heavy compound exercises + light isolation exercises · Low reps on strength days (3–5) and high reps on hypertrophy days (8–12)</p>`}
   };
   const d = map[key];
-  content.innerHTML = `<div style="display:flex;gap:12px"><div style="flex:1"><h2 style="color:var(--neon)">${'${d.title}'}</h2>${'${d.body}'}</div><div style="width:220px"><button class="btn" onclick="App.closeSplit()">إغلاق</button></div></div>`;
+  content.innerHTML = `<div style="display:flex;gap:12px"><div style="flex:1"><h2 style="color:var(--neon)">${'${d.title}'}</h2>${'${d.body}'}</div><div style="width:220px"><button class="btn" onclick="App.closeSplit()">Close</button></div></div>`;
   document.getElementById('splitModal').style.display='flex';
 }
 App.closeSplit = function(){ document.getElementById('splitModal').style.display='none'; document.getElementById('splitContent').innerHTML=''; }
