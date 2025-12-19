@@ -63,10 +63,10 @@ html,body{height:100%;background:var(--bg);background-image: url('../img/hero_v2
 .input{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
 
 /* Fix white dropdown issue */
-select.input {
+/*lect.input {
   background-color: #0f0b14;
   color: #ffffff;
-}
+}*/
 
 select.input option {
   background-color: #0f0b14;
