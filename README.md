@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/fitzone_logo.png" alt="FitZone Logo" width="200"/>
+  img/fitzone_logo.png alt="FitZone Logo" width="200"/>
 </p>
 
 <h1 align="center">🏋️ FitZone - Fitness & Wellness Platform</h1>
@@ -9,13 +9,82 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.8+-blue?logo=python&logoColor=white" alt="Python Version"/>
-  <img src="https://img.shields.io/badge/Flask-3.x-green?logo=flask&logoColor=white" alt="Flask"/>
-  <img src="https://img.shields.io/badge/SQLite-3-blue?logo=sqlite&logoColor=white" alt="SQLite"/>
-  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License"/>
+  ady1.github.io/fitZone/" target="_blank">
+    ://img.shields.io/badge/Live-Demo-success?style=for-the-badge" alt="Live Demo"/>
+  </a>
+</p>
+
+<p align="center">
+  =white" alt="Python Version"/>
+  adge/Flask-3.x-green?logo=flask&logoColor=white" alt="Flask"/>
+  3-blue?logo=sqlite&logoColor=white" alt="SQLite"/>
+  img.shields.io/badge/License-MIT-yellow" alt="License"/>
   <img src="https://img.shields.io/badge/Version-8.0-purple" alt="Version"/>
 </p>
 
+---
+
+# 🌐 Live Demo
+
+### 🚀 Try FitZone Online
+
+https://kerolosnady1.github.io/fitZone/
+
+---
+
+# 📸 Project Preview
+
+## 🏠 Home Page
+
+![docs/screenshots/home.png](https://github.com/Kerolosnady1/fitZone/blob/master/docs/screenshots/home.png?raw=true)
+
+---
+
+## 💪 Training Programs
+
+![docs/screenshots/training.png](https://github.com/Kerolosnady1/fitZone/blob/master/docs/screenshots/training.png?raw=true)
+
+---
+
+## 🍎 Nutrition & Meals
+
+![docs/screenshots/meals.png](https://github.com/Kerolosnady1/fitZone/blob/master/docs/screenshots/meals.png?raw=true)
+
+---
+
+
+## 👤 Login Page
+
+![docs/screenshots/login.png](https://github.com/Kerolosnady1/fitZone/blob/master/docs/screenshots/login.png?raw=true)
+
+---
+
+## 🌐 Contact
+
+![docs/screenshots/contact.png](https://github.com/Kerolosnady1/fitZone/blob/master/docs/screenshots/contact.png?raw=true)
+
+---
+
+## ℹ️ About
+
+![docs/screenshots/about.png](https://github.com/Kerolosnady1/fitZone/blob/master/docs/screenshots/about.png?raw=true)
+
+---
+
+## 🈂️ Services
+
+![docs/screenshots/services.png](https://github.com/Kerolosnady1/fitZone/blob/master/docs/screenshots/services.png?raw=true)
+
+---
+
+
+
+> 💡 Want to explore the whole experience?
+>
+> Visit the live website:
+>
+> https://kerolosnady1.github.io/fitZone/
+``
 ---
 
 ## 📖 Overview
@@ -126,7 +195,7 @@ fitZone/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/fitZone.git
+   git clone https://github.com/Kerolosnady1/fitZone.git
    cd fitZone
    ```
 
@@ -259,7 +328,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 👨‍💻 Author
 
-**FitZone Team**
+**Kerolos Farag**
 
 - 📍 Location: Cairo, Egypt
 - 📧 Contact: Via the [Contact Page](contact.html)
@@ -282,3 +351,4 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 <p align="center">
   Made with 💪 for fitness enthusiasts worldwide
 </p>
+
