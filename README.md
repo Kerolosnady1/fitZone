@@ -1,24 +1,22 @@
 <p align="center">
-  img/fitzone_logo.png alt="FitZone Logo" width="200"/>
+  <img src="img/fitzone_logo.png" alt="FitZone Logo" width="200"/>
 </p>
 
 <h1 align="center">🏋️ FitZone - Fitness & Wellness Platform</h1>
 
-<p align="center">
-  <strong>Transform Your Body with the Futuristic Fitness Companion</strong>
 </p>
 
 <p align="center">
-  ady1.github.io/fitZone/" target="_blank">
-    ://img.shields.io/badge/Live-Demo-success?style=for-the-badge" alt="Live Demo"/>
-  </a>
-</p>
+  <img src="https://img.shields.io/badge/Python-3.8+-blue?logo=python&logoColor=white" alt="Python Version"/>
+  <img src="https://img.shields.io/badge/Flask-3.x-green?logo=flask&logoColor=white" alt="Flask"/>
+  <img src="https://img.shields.io/badge/SQLite-3-blue?logo=sqlite&logoColor=white" alt="SQLite"/>
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License"/>
 
-<p align="center">
-  =white" alt="Python Version"/>
-  adge/Flask-3.x-green?logo=flask&logoColor=white" alt="Flask"/>
-  3-blue?logo=sqlite&logoColor=white" alt="SQLite"/>
-  img.shields.io/badge/License-MIT-yellow" alt="License"/>
+
+
+
+
+
   <img src="https://img.shields.io/badge/Version-8.0-purple" alt="Version"/>
 </p>
 
